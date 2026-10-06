@@ -5,3 +5,22 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+# Old Intercom help-center links used inside the app
+[[redirects]]
+  from = "https://help.planzy.ai/en/articles/9335132-privacy-policy"
+  to = "https://planzy.ai/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://help.planzy.ai/en/articles/9335177-terms-conditions"
+  to = "https://planzy.ai/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://help.planzy.ai/*"
+  to = "https://planzy.ai/"
+  status = 301
+  force = true
