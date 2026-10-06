@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planzy — AI coach for runners: 5K, 10K, half &amp; marathon training plans</title>
+<meta name="description" content="Train smarter for any distance with an AI-powered running coach that adapts to you. Get a personalized training plan based on your fitness level, goals, and schedule. Your plan evolves automatically as you progress, keeping you on track and injury-free.">
+<link rel="canonical" href="https://www.planzy.ai/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.planzy.ai/">
+<meta property="og:title" content="Planzy — AI coach for runners: 5K, 10K, half &amp; marathon training plans">
+<meta property="og:description" content="Train smarter for any distance with an AI-powered running coach that adapts to you. Get a personalized training plan based on your fitness level, goals, and schedule. Your plan evolves automatically as you progress, keeping you on track and injury-free.">
+<meta property="og:image" content="https://www.planzy.ai/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Planzy — AI coach for runners: 5K, 10K, half &amp; marathon training plans">
+<meta name="twitter:description" content="Train smarter for any distance with an AI-powered running coach that adapts to you. Get a personalized training plan based on your fitness level, goals, and schedule. Your plan evolves automatically as you progress, keeping you on track and injury-free.">
+<meta name="twitter:image" content="https://www.planzy.ai/assets/img/og-image.png">
+<meta name="robots" content="max-image-preview:large">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500&family=Wix+Madefor+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/satoshi-900.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: Satoshi; src: url(/assets/fonts/satoshi-500.woff2) format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: Satoshi; src: url(/assets/fonts/satoshi-700.woff2) format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: Satoshi; src: url(/assets/fonts/satoshi-900.woff2) format("woff2"); font-weight: 900; font-display: swap; }
+
+:root {
+  --bg: #121212;
+  --card: #171717;
+  --green: #49ff00;
+  --text: #fff;
+  --muted: #c8c8c8;
+  --sans: Satoshi, sans-serif;
+  --body: "Plus Jakarta Sans", sans-serif;
+  --button: "Wix Madefor Display", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+.green { color: var(--green); }
+
+/* labels and headings */
+.label { font-weight: 900; font-size: 16px; line-height: 1.2; letter-spacing: .16em; text-transform: uppercase; color: var(--green); }
+.h2 { font-weight: 700; font-size: 38px; line-height: 1.2; }
+
+/* button */
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 55px; padding: 0 28px; border-radius: 999px; background: var(--green); color: var(--bg); font-family: var(--button); font-weight: 700; font-size: 20px; line-height: 24px; transition: transform .2s ease; }
+.btn:hover { transform: scale(1.04); }
+
+/* hero */
+.hero { position: relative; padding-top: 36px; text-align: center; overflow: hidden; }
+.brand { display: inline-flex; align-items: center; gap: 22px; }
+.brand img { width: 100px; height: 100px; }
+.brand span { font-weight: 900; font-size: 62px; line-height: 1.05; letter-spacing: -1.2px; }
+.hero h1 { margin-top: 76px; font-weight: 900; font-size: 62px; line-height: 1.05; letter-spacing: -1.2px; }
+.hero h1 .m { display: none; }
+.hero .btn { margin-top: 72px; width: 250px; }
+
+/* phone wall */
+.wall { position: relative; height: 640px; margin-top: 64px; }
+.wall-cols { position: absolute; left: 50%; top: 0; width: 1146px; margin-left: -573px; display: flex; gap: 24px; height: 100%; transform-origin: top center; }
+.col { width: 210px; height: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(transparent, #000 12.5%, #000 87.5%, transparent); mask-image: linear-gradient(transparent, #000 12.5%, #000 87.5%, transparent); }
+.track { display: flex; flex-direction: column; gap: 18px; animation: down var(--dur) linear infinite; animation-delay: var(--delay); }
+@keyframes down { from { transform: translateY(calc(-50% - 9px)); } to { transform: translateY(0); } }
+.wall::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(60% 69.3% at 50% 84%, rgba(18,18,18,0) 38.9%, var(--bg) 100%); }
+
+.phone { position: relative; width: 210px; aspect-ratio: 207 / 421; flex: none; }
+.phone .screen { position: absolute; left: 4.6%; top: 1.9%; width: 90.8%; height: 96.2%; object-fit: cover; border-radius: 13% / 6.2%; }
+.phone .frame { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* why */
+.why { padding: 120px 40px 0; max-width: 1280px; margin: 0 auto; }
+.why .h2 { text-align: center; }
+.grid { margin-top: 62px; display: grid; grid-template-columns: 768fr 416fr; gap: 16px; }
+.grid .row2 { grid-column: 1 / -1; display: grid; grid-template-columns: 416fr 768fr; gap: 16px; }
+.card { position: relative; background: var(--card); border-radius: 25px; padding: 32px; height: 440px; overflow: hidden; }
+.card h3 { margin-top: 16px; font-weight: 500; font-size: 28px; line-height: 1.2; }
+.card-phones { position: absolute; left: 34px; top: 174px; display: flex; gap: 14px; }
+.card-phones .phone { width: 224px; }
+.sync { width: 201px; margin: 46px auto 0; }
+.watch { display: flex; flex-direction: column; align-items: center; margin-top: 40px; }
+.watch .garmin { width: 200px; }
+.watch .apps { display: flex; gap: 38px; margin-top: 27px; }
+.watch .apps img { width: 100px; height: 100px; }
+.runners { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 38px; margin-left: 152px; }
+.runners div { display: flex; gap: 10px; }
+.runners img, .runners .you { width: 72px; height: 72px; border-radius: 50%; border: 3px solid var(--green); object-fit: cover; }
+.runners .you { display: grid; place-items: center; background: var(--green); color: var(--bg); font-weight: 900; font-size: 16px; letter-spacing: .16em; padding-left: .16em; }
+
+/* cta */
+.cta { padding: 203px 20px 84px; text-align: center; }
+.cta .btn { margin-top: 32px; width: 300px; color: #000; }
+
+/* faq */
+.faq { max-width: 1080px; margin: 0 auto; padding: 120px 0 0; }
+.faq .h2 { color: var(--green); }
+.faq-list { margin-top: 61px; }
+.faq details { border-bottom: 1px solid var(--green); padding: 0 0 31px; margin-bottom: 31px; }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; font-weight: 500; font-size: 24px; line-height: 1.2; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary svg { flex: none; width: 24px; height: 24px; transition: transform .25s ease; }
+.faq details[open] summary svg { transform: rotate(180deg); }
+.faq details p { margin-top: 29px; font-family: var(--body); font-weight: 500; font-size: 16px; line-height: 24px; color: #f4f4f4; }
+
+/* download */
+.download { max-width: 1080px; margin: 130px auto 0; background: var(--card); border-radius: 40px; padding: 32px 0 32px 40px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: 648px; overflow: hidden; }
+.download .text { width: 460px; justify-self: center; }
+.download .h2 { margin-top: 16px; }
+.download .h2 .m { display: none; }
+.stores { display: flex; justify-content: center; gap: 12px; margin-top: 39px; }
+.stores img { width: 180px; height: 52px; }
+.download .phone { width: 286px; justify-self: center; }
+
+/* footer */
+footer { max-width: 1200px; margin: 80px auto 0; padding: 40px 40px 40px; }
+footer .mark { width: 50px; height: 50px; }
+footer .tag { margin-top: 16px; font-weight: 500; font-size: 24px; line-height: 1.2; }
+footer .bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; font-family: var(--body); font-weight: 500; font-size: 16px; line-height: 24px; color: var(--muted); }
+footer nav { display: flex; gap: 16px; }
+footer nav a:hover { color: #fff; }
+
+/* reveal on scroll */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.no-js .reveal { opacity: 1; transform: none; }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* tablet */
+@media (max-width: 1100px) {
+  .grid, .grid .row2 { grid-template-columns: 1fr; }
+  .card { height: auto; min-height: 400px; }
+  .card-phones { position: static; margin-top: 40px; margin-bottom: -120px; }
+  .runners { margin-left: 0; }
+  .faq, .download { margin-left: 24px; margin-right: 24px; }
+  .download { grid-template-columns: 1fr; padding: 48px 24px 0; text-align: center; gap: 48px; }
+  .download .text { width: auto; }
+  .download .phone { margin-bottom: -180px; }
+}
+
+/* phone */
+@media (max-width: 640px) {
+  .hero { padding-top: 36px; }
+  .brand { gap: 20px; }
+  .brand img { width: 80px; height: 80px; }
+  .brand span { font-size: 48px; }
+  .hero h1 { margin-top: 56px; font-size: 40px; padding: 0 16px; }
+  .hero h1 .m { display: inline; }
+  .hero h1 .d { display: none; }
+  .hero .btn { margin-top: 32px; }
+  .wall { height: 820px; margin-top: 40px; }
+  .wall-cols { transform: scale(1.3); }
+  .wall::after { background: radial-gradient(130% 70% at 50% 50%, rgba(18,18,18,0) 55%, var(--bg) 100%); }
+  .why { padding: 80px 16px 0; }
+  .grid { margin-top: 40px; }
+  .card { padding: 28px 24px; }
+  .card h3 { font-size: 26px; }
+  .card-phones { gap: 10px; }
+  .card-phones .phone { width: 150px; }
+  .card-phones .phone:nth-child(3) { display: none; }
+  .card-phones { margin-bottom: -60px; }
+  .runners img, .runners .you { width: 56px; height: 56px; }
+  .cta { padding: 120px 16px 40px; }
+  .cta .btn { width: auto; }
+  .h2 { font-size: 32px; }
+  .faq { padding-top: 80px; margin: 0 16px; }
+  .faq-list { margin-top: 40px; }
+  .faq summary { font-size: 20px; }
+  .download { margin: 100px 16px 0; border-radius: 32px; }
+  .download .h2 .m { display: inline; }
+  .stores { flex-wrap: wrap; }
+  .download .phone { width: 240px; }
+  footer { padding: 40px 16px; }
+  footer .bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+</style>
+</head>
+<body class="no-js">
+<script>document.body.classList.remove('no-js');</script>
+
+<header class="hero" id="home">
+  <a class="brand" href="#home" aria-label="Planzy">
+    <img src="/assets/img/logo-mark.png" alt="" width="100" height="100">
+    <span>Planzy</span>
+  </a>
+  <h1>A running plan<span class="d"> </span><br class="m">that <span class="green">adapts to you.</span><br>Not the other way around.</h1>
+  <a class="btn" href="https://apps.apple.com/app/id6499276047">Get my training plan</a>
+
+  <div class="wall" aria-hidden="true">
+    <div class="wall-cols">
+      <div class="col"><div class="track" style="--dur:15s;--delay:-3s">
+        <div class="phone"><img class="screen" src="/assets/img/screen-activities.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-calendar.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-activities.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-calendar.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+      </div></div>
+      <div class="col"><div class="track" style="--dur:13s;--delay:-9s">
+        <div class="phone"><img class="screen" src="/assets/img/screen-calendar.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-activities.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-calendar.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-activities.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+      </div></div>
+      <div class="col"><div class="track" style="--dur:11.5s;--delay:-2s">
+        <div class="phone"><img class="screen" src="/assets/img/screen-goal.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-planned-run.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-goal.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-planned-run.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+      </div></div>
+      <div class="col"><div class="track" style="--dur:13s;--delay:-6s">
+        <div class="phone"><img class="screen" src="/assets/img/screen-planned-run.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-goal.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-planned-run.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-goal.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+      </div></div>
+      <div class="col"><div class="track" style="--dur:15s;--delay:-11s">
+        <div class="phone"><img class="screen" src="/assets/img/screen-goal.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-planned-run.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-goal.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        <div class="phone"><img class="screen" src="/assets/img/screen-planned-run.png" alt=""><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+      </div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="why">
+    <h2 class="h2 reveal">Why Planzy?</h2>
+    <div class="grid">
+      <div class="card reveal">
+        <h6 class="label">Truly personalized</h6>
+        <h3>Your actual running data used to build a plan with the right paces, heart rate zones, and workouts.</h3>
+        <div class="card-phones" aria-hidden="true">
+          <div class="phone"><img class="screen" src="/assets/img/screen-activities.png" alt="" loading="lazy"><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+          <div class="phone"><img class="screen" src="/assets/img/screen-planned-run.png" alt="" loading="lazy"><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+          <div class="phone"><img class="screen" src="/assets/img/screen-time.png" alt="" loading="lazy"><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+        </div>
+      </div>
+      <div class="card reveal">
+        <h6 class="label">Adjusts automatically</h6>
+        <h3>Skip a run or train harder than planned? Planzy updates your schedule after every workout to keep you on track.</h3>
+        <img class="sync" src="/assets/img/icon-sync.png" alt="" loading="lazy">
+      </div>
+      <div class="row2">
+        <div class="card reveal">
+          <h6 class="label">Works with your watch</h6>
+          <h3>Syncs with Garmin, Strava, and Apple Health. No manual work needed.</h3>
+          <div class="watch">
+            <img class="garmin" src="/assets/img/logo-garmin.png" alt="Garmin" loading="lazy">
+            <div class="apps">
+              <img src="/assets/img/icon-strava.png" alt="Strava" loading="lazy">
+              <img src="/assets/img/icon-health.png" alt="Apple Health" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="card reveal">
+          <h6 class="label">All runners welcome</h6>
+          <h3>From your first 5K to a sub-3 marathon — Planzy helps you reach your goal, whatever it is.</h3>
+          <div class="runners" aria-hidden="true">
+            <div><img src="/assets/img/runner-1.jpg" alt="" loading="lazy"><img src="/assets/img/runner-2.jpg" alt="" loading="lazy"><img src="/assets/img/runner-3.jpg" alt="" loading="lazy"></div>
+            <div><img src="/assets/img/runner-4.jpg" alt="" loading="lazy"><img src="/assets/img/runner-5.jpg" alt="" loading="lazy"><span class="you">YOU</span><img src="/assets/img/runner-6.jpg" alt="" loading="lazy"></div>
+            <div><img src="/assets/img/runner-7.jpg" alt="" loading="lazy"><img src="/assets/img/runner-8.jpg" alt="" loading="lazy"><img src="/assets/img/runner-9.jpg" alt="" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2 class="h2 reveal">Get your running plan today.</h2>
+    <a class="btn reveal" href="https://onelink.to/mcejjr">Start my 7 days free trial</a>
+  </section>
+
+  <section class="faq">
+    <h2 class="h2 reveal">Frequently asked questions</h2>
+    <div class="faq-list">
+      <details class="reveal">
+        <summary>My marathon is in 3 months but I'm not sure I'll be ready. How can Planzy help?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 8.25 12 15.75 4.5 8.25" fill="none" stroke="#49ff00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <p>Planzy creates a personalized training plan based on your body metrics, current pace, and marathon date. You’ll see exactly what it will take to get ready. Good luck!</p>
+      </details>
+      <details class="reveal">
+        <summary>After the free trial, will I be paying for each plan created?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 8.25 12 15.75 4.5 8.25" fill="none" stroke="#49ff00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <p>No, you can create as many plans as you need during your subscription.</p>
+      </details>
+      <details class="reveal">
+        <summary>What happens to my training plan if I stop running for a while?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 8.25 12 15.75 4.5 8.25" fill="none" stroke="#49ff00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <p>As soon as you're ready to run again, just open the app — your plan will be recalculated to account for the break.</p>
+      </details>
+      <details class="reveal">
+        <summary>What is the science behind Planzy’s training plan calculations?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 8.25 12 15.75 4.5 8.25" fill="none" stroke="#49ff00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <p>Thanks for asking! Planzy uses adaptive algorithms, VO2 max estimates, pace trends and some magic of course.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="download reveal">
+    <div class="text">
+      <h6 class="label">Download the app</h6>
+      <h2 class="h2">Best time to start<br class="m"> is now.</h2>
+      <div class="stores">
+        <a href="https://apps.apple.com/app/id6499276047"><img src="/assets/img/badge-app-store.svg" alt="Download on the App Store" width="180" height="52"></a>
+        <a href="https://play.google.com/store/apps/details?id=ai.planzy"><img src="/assets/img/badge-google-play.svg" alt="Get it on Google Play" width="180" height="52"></a>
+      </div>
+    </div>
+    <div class="phone" aria-hidden="true"><img class="screen" src="/assets/img/screen-goal.png" alt="" loading="lazy"><img class="frame" src="/assets/img/phone-frame.webp" alt=""></div>
+  </section>
+</main>
+
+<footer>
+  <a href="#home" aria-label="Planzy"><img class="mark" src="/assets/img/logo-mark.png" alt=""></a>
+  <p class="tag">Reach your running goals with Planzy</p>
+  <div class="bottom">
+    <span>© 2025</span>
+    <nav>
+      <a href="https://help.planzy.ai/en/articles/9335132-privacy-policy">Privacy Policy</a>
+      <a href="https://help.planzy.ai/en/articles/9335177-terms-conditions">Terms &amp; Conditions</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// Fade sections in as they scroll into view
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+</body>
+</html>
