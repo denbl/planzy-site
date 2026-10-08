@@ -1,23 +1,23 @@
 # planzy.ai
 
-Сайт Planzy: одна страница и две юридические (`/privacy`, `/terms`). Чистый HTML без сборки, картинки и шрифты лежат в `assets/`.
+The Planzy website: one landing page and two legal pages (`/privacy`, `/terms`). Plain HTML with no build step; images and fonts live in `assets/`.
 
-## Как выкладывается
+## Deployment
 
-- Netlify, проект `planzy-ai` (команда AfterDot). Каждый пуш в `main` выкладывается сам.
-- Главный адрес `planzy.ai`, `www.planzy.ai` перенаправляется на него.
-- `help.planzy.ai` — бывший справочный центр Intercom. Старые ссылки на статьи из приложения перенаправляются на `/privacy` и `/terms` (`netlify.toml`).
-- Плашка «Powered by Netlify» выключена в настройках проекта.
+- Netlify, project `planzy-ai` (AfterDot team). Every push to `main` deploys automatically.
+- The canonical address is `planzy.ai`; `www.planzy.ai` redirects to it.
+- `help.planzy.ai` is the former Intercom help center. Old article links from the app redirect to `/privacy` and `/terms` (`netlify.toml`).
+- The "Powered by Netlify" badge is turned off in the project settings.
 
 ## DNS (GoDaddy)
 
 - `@` A → `75.2.60.5`
 - `www` CNAME → `planzy-ai.netlify.app`
 - `help` CNAME → `planzy-ai.netlify.app`
-- MX, TXT (SPF, подтверждения Google), `s1/s2._domainkey` (SendGrid) и `_…acm-validations.aws` не трогать: от них зависят почта и сертификат API.
+- Do not touch MX, TXT (SPF, Google verifications), `s1/s2._domainkey` (SendGrid) or `_…acm-validations.aws`: email and the API certificate depend on them.
 
-## Что где
+## Where things are
 
-- Стена телефонов в первом экране: блок `.wall-cols` в `index.html`. Пять колонок, по три экрана в каждой; один и тот же экран не ставить в соседние колонки.
-- Приложение только под iOS: все кнопки ведут на `https://apps.apple.com/app/id6499276047`.
-- Тексты `/privacy` и `/terms` написаны по коду приложения (октябрь 2026). Издатель — Artem Ptashnik, контакт help@planzy.ai.
+- The phone wall in the hero: the `.wall-cols` block in `index.html`. Five columns, three screens each; never put the same screen in neighbouring columns.
+- The app is iOS only: every button links to `https://apps.apple.com/app/id6499276047`.
+- The `/privacy` and `/terms` texts are based on the app's code (October 2026). Publisher: Artem Ptashnik, contact help@planzy.ai.
